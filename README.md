@@ -10,7 +10,7 @@ We build on top of Faster-RCNN with a ResNet-50 Backbone pre-trained on ImageNet
 after non-maximum-suppression, anchors at three scales (128, 256, 512) and three aspect ratios (1:1,
 1:2, 2:1).
 
-For OSHOT we train the base network for 70k iterations using SGD with momentum set at 0.9, the
+For TTA we train the base network for 70k iterations using SGD with momentum set at 0.9, the
 initial learning rate is 0.001 and decays after 50k iterations. We use a batch size of 1, keep 
 batch normalization layers fixed for both pretraining and adaptation phases and freeze the first 
 2 blocks of ResNet50. The weight of the rotation task is set to λ=0.05.
