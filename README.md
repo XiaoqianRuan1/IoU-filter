@@ -29,7 +29,7 @@ website](https://naoto0804.github.io/cross_domain_detection/).
 
 ## Performing pretraining 
 
-To perform a *standard* OSHOT pretraing using Pascal VOC as source dataset:
+To perform a *standard* TTA pretraing using Pascal VOC as source dataset:
 
 ```bash
 python tools/train_net.py --config-file configs/amd/voc_pretrain.yaml
@@ -49,7 +49,7 @@ python tools/test_net.py --config-file configs/amd/oshot_clipart_target.yaml --c
 
 ## Performing the one-shot adaptation
 
-To use OSHOT adaptation procedure and obtain results on one of the AMD please refer to one of the
+To use TTA adaptation procedure and obtain results on one of the AMD please refer to one of the
 config files. For example for clipart:
 
 ```bash
