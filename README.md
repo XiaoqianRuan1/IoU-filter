@@ -1,8 +1,9 @@
-# Demo implementation of *Fully Test-time Adaptation for Object Detection*
+# Fully Test-time Adaptation for Object Detection
+This is the code for object detective test-time adaptation. 
 
+## Requirements
 The detection framework is inherited from [Maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) and uses Pytorch and CUDA.
-
-This readme will guide you through a full run of our method for the Pascal VOC -> AMD benchmarks. 
+Please refer to [INSTALL.md](INSTALL.md) for installation instructions. 
 
 ## Implementation details 
 
@@ -15,17 +16,13 @@ initial learning rate is 0.001 and decays after 50k iterations. We use a batch s
 batch normalization layers fixed for both pretraining and adaptation phases and freeze the first 
 2 blocks of ResNet50. The weight of the rotation task is set to λ=0.05.
 
-## Installation
-
-Check [INSTALL.md](INSTALL.md) for installation instructions.
-
 ## Datasets
 
-Create a folder named `datasets` and include VOC2007 and VOC2012 source datasets (download from
-[Pascal VOC's website](http://host.robots.ox.ac.uk/pascal/VOC/)).
+Create a folder named `datasets` and include VOC2007 and VOC2012 source datasets (download from [Pascal VOC's website (http://host.robots.ox.ac.uk/pascal/VOC/)).
 
-Download and extract clipart1k, comic2k and watercolor2k from [authors'
-website](https://naoto0804.github.io/cross_domain_detection/).
+Download and extract clipart1k, comic2k and watercolor2k from (https://naoto0804.github.io/cross_domain_detection/).
+
+
 
 ## Performing pretraining 
 
@@ -47,11 +44,14 @@ for clipart:
 python tools/test_net.py --config-file configs/amd/oshot_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 
-## Performing the one-shot adaptation
+## Performing the test-time adapation
 
-To use TTA adaptation procedure and obtain results on one of the AMD please refer to one of the
+To use TTA procedure and obtain results on one of the AMD please refer to one of the
 config files. For example for clipart:
 
 ```bash
 python tools/oshot_net.py --config-file configs/amd/oshot_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
+
+## Acknowledge
+
