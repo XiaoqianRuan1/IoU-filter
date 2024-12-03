@@ -9,11 +9,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 import torch
 from maskrcnn_benchmark.config import cfg
 from maskrcnn_benchmark.data import make_data_loader
-from maskrcnn_benchmark.engine.oshot import oshot_inference as inference
-#from maskrcnn_benchmark.engine.pseudo_oshot import oshot_inference as pseudo_inference
-#from maskrcnn_benchmark.engine.cotta_oshot import oshot_inference as pseudo_inference
-#from maskrcnn_benchmark.engine.tent_oshot import oshot_inference as pseudo_inference
-from maskrcnn_benchmark.engine.pseudo_continuous import oshot_inference as pseudo_inference
+from maskrcnn_benchmark.engine.pseudo_tta import tta_inference as pseudo_inference
 from maskrcnn_benchmark.modeling.detector import build_detection_model
 from maskrcnn_benchmark.utils.checkpoint import DetectronCheckpointer
 from maskrcnn_benchmark.utils.collect_env import collect_env_info
@@ -117,7 +113,7 @@ def main():
                                 expected_results=cfg.TEST.EXPECTED_RESULTS,
                                 expected_results_sigma_tol=cfg.TEST.EXPECTED_RESULTS_SIGMA_TOL,
                                 output_folder=output_folder,
-                                oshot_breakpoints=cfg.MODEL.SELF_SUPERVISOR.OSHOT_BREAKPOINTS,
+                                tta_breakpoints=cfg.MODEL.SELF_SUPERVISOR.TTA_BREAKPOINTS,
                                 cfg=cfg
         )
         synchronize()
