@@ -1,5 +1,5 @@
 # Fully Test-time Adaptation for Object Detection
-This is the code for object detective test-time adaptation. Here is an example about TTA based on VOC dataset -> Clipart dataset. 
+Here is the modified version of code for Fully Test-time Adaptation for Object Detection. The detailed example of training VOC dataset -> Clipart dataset.  
 
 ## Requirements
 The detection framework is inherited from [Maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) and uses Pytorch and CUDA.
@@ -14,10 +14,13 @@ During pre-training phase, we train the base network for 70k iterations using SG
 During adaptation phase, we adapt the model for five iterations based on one sample. We use SGD with momentum set at 0.9, and learning rate is set as 0.001. The batch normalization is fixed and the first two blocks are freezen. 
 
 ## Datasets
-
-Create a folder named `datasets` and include VOC2007 and VOC2012 source datasets (download from [Pascal VOC's website (http://host.robots.ox.ac.uk/pascal/VOC/)).
+### VOC->Clipart, Comic, Watercolor
+Create a folder named `datasets` and include VOC2007 and VOC2012 source datasets (download (http://host.robots.ox.ac.uk/pascal/VOC/)).
 
 Download and extract clipart1k, comic2k and watercolor2k from (https://naoto0804.github.io/cross_domain_detection/).
+
+### Cityscapes->Foggy, Rainy Cityscapes
+Download Cityscapes, along with Foggy and Rainy Cityscapes datasets from (https://www.cityscapes-dataset.com/downloads/). 
 
 ## Performing pretraining 
 
@@ -32,7 +35,7 @@ python tools/train_net.py --config-file configs/amd/voc_pretrain.yaml
 You can test a pretrained model based on the target datasets by referring to the correct config-file, for example, if testing on clipart dataset:
 
 ```bash
-python tools/test_net.py --config-file configs/amd/oshot_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
+python tools/test_net.py --config-file configs/amd/test_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 
 ## Performing the test-time adapation
@@ -40,7 +43,7 @@ python tools/test_net.py --config-file configs/amd/oshot_clipart_target.yaml --c
 To use TTA procedure and obtain results by referring to the config files. For example for clipart:
 
 ```bash
-python tools/oshot_net.py --config-file configs/amd/oshot_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
+python tools/adapt_net.py --config-file configs/amd/tta_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 
 ## Acknowledge
