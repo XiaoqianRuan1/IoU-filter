@@ -35,7 +35,7 @@ python tools/train_net.py --config-file configs/amd/voc_pretrain.yaml
 You can test a pretrained model based on the target datasets by referring to the correct config-file, for example, if testing on clipart dataset:
 
 ```bash
-python tools/test_net.py --config-file configs/amd/test_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
+python tools/test_net.py --config-file configs/amd/tta_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 
 ## Performing the test-time adapation
