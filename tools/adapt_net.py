@@ -4,8 +4,6 @@
 
 import argparse
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
-
 import torch
 from maskrcnn_benchmark.config import cfg
 from maskrcnn_benchmark.data import make_data_loader
