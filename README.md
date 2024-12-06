@@ -8,8 +8,22 @@ pip install -r requirements.txt
 ```
 ### Install other dependencies step by step
 ```bash
+# Install pycocotools
+cd $INSTALL_DIR
+git clone https://github.com/cocodataset/cocoapi.git
+cd cocoapi/PythonAPI
+python setup.py build_ext install
 
+# install apex
+cd $INSTALL_DIR
+git clone https://github.com/NVIDIA/apex.git
+cd apex
+python setup.py install --cuda_ext --cpp_ext
 
+# compile and install maskrcnn-module
+python setup.py build develop
+
+```
 ## Implementation details 
 
 We build on top of Faster-RCNN with a ResNet-50 Backbone pre-trained on ImageNet, 300 top proposals after non-maximum-suppression, anchors at three scales (128, 256, 512) and three aspect ratios (1:1, 1:2, 2:1).
