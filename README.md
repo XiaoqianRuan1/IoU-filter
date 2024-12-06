@@ -1,9 +1,14 @@
 # Fully Test-time Adaptation for Object Detection
 Here is the code for Fully Test-time Adaptation for Object Detection. The detailed example of training VOC dataset -> Clipart dataset.  
 
-## Requirements
-The detection framework is inherited from [Maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) and uses Pytorch and CUDA.
-Please refer to [INSTALL.md](INSTALL.md) for installation instructions. 
+## Installation
+### Install the dependencies by running
+```bash
+pip install -r requirements.txt
+```
+### Install other dependencies step by step
+```bash
+
 
 ## Implementation details 
 
