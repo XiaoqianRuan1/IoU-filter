@@ -1,5 +1,5 @@
 # Fully Test-time Adaptation for Object Detection
-Here is the code for Fully Test-time Adaptation for Object Detection. The detailed example of training VOC dataset -> Clipart dataset.  
+Here is the code for Fully Test-time Adaptation for Object Detection. 
 
 ## Installation
 ### Install the dependencies by running
@@ -24,22 +24,11 @@ python setup.py install --cuda_ext --cpp_ext
 python setup.py build develop
 
 ```
-## Implementation details 
-
-We build on top of Faster-RCNN with a ResNet-50 Backbone pre-trained on ImageNet, 300 top proposals after non-maximum-suppression, anchors at three scales (128, 256, 512) and three aspect ratios (1:1, 1:2, 2:1).
-
-During pre-training phase, we train the base network for 70k iterations using SGD with momentum set at 0.9, the initial learning rate is 0.001 and decays after 50k iterations. During pre-training, the batch size is set as 1, batch normalization layers are fixed and the first two blocks are freezen. 
-
-During adaptation phase, we adapt the model for five iterations based on one sample. We use SGD with momentum set at 0.9, and learning rate is set as 0.001. The batch normalization is fixed and the first two blocks are freezen. 
-
-## Datasets
-### VOC->Clipart, Comic, Watercolor
-Create a folder named `datasets` and include VOC2007 and VOC2012 source datasets (download (http://host.robots.ox.ac.uk/pascal/VOC/)).
-
-Download and extract clipart1k, comic2k and watercolor2k from (https://naoto0804.github.io/cross_domain_detection/).
-
-### Cityscapes->Foggy, Rainy Cityscapes
-Download Cityscapes, along with Foggy and Rainy Cityscapes datasets from (https://www.cityscapes-dataset.com/downloads/). 
+## Data
+| Task | Dataset | Link   |
+|:----------:|:----------:|:-------------:|
+| Training  | VOC2007&VOC2012 | http://host.robots.ox.ac.uk/pascal/VOC/ |
+| Adaptation | Clipart1k&Comic2k&Watercolor2k | https://naoto0804.github.io/cross_domain_detection/ |
 
 ## Performing pretraining 
 
@@ -63,6 +52,17 @@ To use TTA procedure and obtain results by referring to the config files. For ex
 
 ```bash
 python tools/adapt_net.py --config-file configs/amd/tta_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
+```
+## References
+If you find our work helpful, please consider citing our paper.
+```bash
+@inproceedings{ruan2024fully,
+  title={Fully Test-time Adaptation for Object Detection},
+  author={Ruan, Xiaoqian and Tang, Wei},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={1038--1047},
+  year={2024}
+}
 ```
 
 ## Acknowledge
