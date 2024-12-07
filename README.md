@@ -30,7 +30,7 @@ python setup.py build develop
 | Training  | VOC2007&VOC2012 | http://host.robots.ox.ac.uk/pascal/VOC/ |
 | Adaptation | Clipart1k&Comic2k&Watercolor2k | https://naoto0804.github.io/cross_domain_detection/ |
 
-## Performing pretraining 
+## Pretraining
 
 To perform a *standard* TTA pretraing using Pascal VOC as source dataset:
 
@@ -38,7 +38,7 @@ To perform a *standard* TTA pretraing using Pascal VOC as source dataset:
 python tools/train_net.py --config-file configs/amd/voc_pretrain.yaml
 ```
 
-## Testing pretrained model
+## Testing
 
 You can test a pretrained model based on the target datasets by referring to the correct config-file, for example, if testing on clipart dataset:
 
@@ -46,7 +46,7 @@ You can test a pretrained model based on the target datasets by referring to the
 python tools/test_net.py --config-file configs/amd/tta_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 
-## Performing the test-time adapation
+## Test-time Adaptation
 
 To use TTA procedure and obtain results by referring to the config files. For example for clipart:
 
