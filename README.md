@@ -25,10 +25,12 @@ python setup.py build develop
 
 ```
 ## Data
-| Task | Dataset | Link   |
-|:----------:|:----------:|:-------------:|
-| Training  | VOC2007&VOC2012 | http://host.robots.ox.ac.uk/pascal/VOC/ |
-| Adaptation | Clipart1k&Comic2k&Watercolor2k | https://naoto0804.github.io/cross_domain_detection/ |
+| Task | Dataset |
+|:----------:|:----------:|
+| Training  | [VOC2007&VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/) |
+| Adaptation | [Clipart1k&Comic2k&Watercolor2k](https://naoto0804.github.io/cross_domain_detection/) |
+| Training| [Cityscapes](https://www.cityscapes-dataset.com/downloads/)|
+| Adaptation | [Rainy&Foggy Cityscapes](https://www.cityscapes-dataset.com/downloads/) |
 
 ## Pretraining
 
