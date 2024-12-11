@@ -39,7 +39,7 @@ To perform a *standard* TTA pretraing using Pascal VOC as source dataset:
 ```bash
 python tools/train_net.py --config-file configs/amd/voc_pretrain.yaml
 ```
-The pre-trained model is provided in [Google drive](https://drive.google.com/file/d/1XDWu-qZ3fDN_h4Zfsf1k8xqx72QZSjDK/view?usp=drive_link).
+The pretrained model is provided in [Google drive](https://drive.google.com/file/d/1XDWu-qZ3fDN_h4Zfsf1k8xqx72QZSjDK/view?usp=drive_link).
 ## Testing
 
 You can test a pretrained model based on the target datasets by referring to the correct config-file, for example, if testing on clipart dataset:
