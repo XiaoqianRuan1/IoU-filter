@@ -5,7 +5,6 @@ from maskrcnn_benchmark.utils.env import setup_environment  # noqa F401 isort:sk
 
 import argparse
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "4"
 
 import torch
 from maskrcnn_benchmark.config import cfg
