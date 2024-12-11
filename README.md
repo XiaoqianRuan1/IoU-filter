@@ -45,7 +45,7 @@ python tools/train_net.py --config-file configs/amd/voc_pretrain.yaml
 You can test a pretrained model based on the target datasets by referring to the correct config-file, for example, if testing on clipart dataset:
 
 ```bash
-python tools/test_net.py --config-file configs/amd/tta_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
+python tools/test_net.py --config-file configs/amd/voc_tta_clipart.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 
 ## Test-time Adaptation
@@ -53,7 +53,7 @@ python tools/test_net.py --config-file configs/amd/tta_clipart_target.yaml --ckp
 To use TTA procedure and obtain results by referring to the config files. For example for clipart:
 
 ```bash
-python tools/adapt_net.py --config-file configs/amd/tta_clipart_target.yaml --ckpt <pretrain_output_dir>/model_final.pth
+python tools/adapt_net.py --config-file configs/amd/voc_tta_clipart.yaml --ckpt <pretrain_output_dir>/model_final.pth
 ```
 ## References
 If you find our work helpful, please consider citing our paper.
