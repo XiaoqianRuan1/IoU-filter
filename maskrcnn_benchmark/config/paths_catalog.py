@@ -5,8 +5,8 @@ import os
 
 
 class DatasetCatalog(object):
-    #DATA_DIR = "/mnt/sde1/xiaoqianruan/H2FA_R-CNN-main/DETECTRON2_DATASETS/"
-    DATA_DIR = "/mnt/sde1/xiaoqianruan/SemiSeg-Contrastive-main/data/"
+    DATA_DIR = "/mnt/sde1/xiaoqianruan/H2FA_R-CNN-main/DETECTRON2_DATASETS/"
+    #DATA_DIR = "/mnt/sde1/xiaoqianruan/SemiSeg-Contrastive-main/data/"
     #DATA_DIR = "/mnt/sde1/xiaoqianruan/OSHOT/datasets/bdd100k/"
     DATASETS = {
         "bdd100k_train": {
